@@ -3,7 +3,11 @@ guid: ec4bae2fdf1b14a4b8cd3547e8a7e0d6
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - collisionAudioClip: {fileID: 8300000, guid: 30016a720561d534db8f3dd9fe06a661,
+      type: 3}
+  - damageAudioClip: {fileID: 8300000, guid: 8dd8c54dffa0abe449ee46df045a3bef, type: 3}
+  - deathAudioClip: {fileID: 8300000, guid: 545f238b091d5e840a06d82d443bf12c, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
