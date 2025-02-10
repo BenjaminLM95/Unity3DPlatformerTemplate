@@ -11,6 +11,11 @@ public class PushableInteractable : PhysicsInteractable
     [Tooltip("Rotational force required to break the connection with the player")]
     [SerializeField] private float jointBreakTorque = 200f;
 
+    [Space(3)]
+    [Tooltip("If set to true pressing the interact button while holding the object wil stop holding it.")]
+    [SerializeField, ToggleLeft] private bool InteractHoldingStopsHolding = true;
+    [Tooltip("Whether it should toggle kinematic when interacting")]
+    [SerializeField] private bool toggleKinematicOnInteract = false;
     private MovementController movementController;
     private float defaultPlayerRotationSpeed;
     private void OnJointBreak(float breakForce)
@@ -39,6 +44,9 @@ public class PushableInteractable : PhysicsInteractable
             movementController.rotationSpeed = 0;
         }
 
+        if (toggleKinematicOnInteract)
+            rb.isKinematic = !rb.isKinematic;
+
         AttachToController<FixedJoint>(controller);
         return true;
     }
@@ -61,13 +69,26 @@ public class PushableInteractable : PhysicsInteractable
         }
     }
 
+
+    public override void OnInteractedAlreadyInteracting(InteractionController controller)
+    {
+        base.OnInteractedAlreadyInteracting(controller);
+        if (InteractHoldingStopsHolding)
+        {
+            OnInteractionEnd(controller);
+        }
+    }
+
     public override void OnInteractionEnd(InteractionController controller)
     {
         if (currentInteractor == null) return;
 
         DetachFromController();
         rb.interpolation = defaultInterpolation;
-        
+
+        if (toggleKinematicOnInteract)
+            rb.isKinematic = !rb.isKinematic;
+
         // Restore player's original rotation speed
         if (movementController != null) {
             movementController.overrideCanJump = false;
