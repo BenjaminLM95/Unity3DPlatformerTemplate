@@ -22,7 +22,6 @@ using System;
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
-using UnityEditor.SceneManagement;
 
 /// <summary>
 /// Soundmanager helps
@@ -40,16 +39,10 @@ public class SoundManager : Singleton<SoundManager>
 
     public float SFXVolume = 1;
     public float MusicVolume = 1;
-    
-    public static bool isShuttingDown;
+   
 
     private Transform SoundPool, SoundPlaying;
     
-    //Unity calls this function when it's about to quit
-    void OnApplicationQuit()
-    {
-        isShuttingDown = true;
-    }
 
     protected override void Awake()
     {
@@ -330,7 +323,7 @@ public class SoundManager : Singleton<SoundManager>
     /// <param name="prefab">Soundgroup prefab to add</param>
     public static void AddToPool(SoundGroup prefab)
     {
-        if (isShuttingDown) return;
+        if (IsQuittingGame) return;
         // If the prefab isn't null and it doesn't exist on our dictionary yet, add it.
         if (prefab != null && !Instance.pooledObjects.ContainsKey(prefab))
         {
@@ -347,7 +340,7 @@ public class SoundManager : Singleton<SoundManager>
     /// <returns></returns>
     public static SoundGroup SpawnSoundGroup(SoundGroup prefab, Vector3 position)
     {
-        if (isShuttingDown) return null;
+        if (IsQuittingGame) return null;
         List<SoundGroup> list;
         SoundGroup obj;
         obj = null;
@@ -398,7 +391,9 @@ public class SoundManager : Singleton<SoundManager>
     /// <param name="obj">Soundgroup object to recycle</param>
     public static void RecycleSoundToPool(SoundGroup obj)
     {
-        if (isShuttingDown || obj == null) return;
+        //Debug.Log("Recycle to pool");
+        
+        if (IsQuittingGame || obj == null) return;
 
         //Try and get the prefab reference from the pool dictionary
         SoundGroup groupPrefab = null;
