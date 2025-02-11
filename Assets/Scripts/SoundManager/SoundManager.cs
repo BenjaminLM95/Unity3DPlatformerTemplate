@@ -207,10 +207,16 @@ public class SoundManager : Singleton<SoundManager>
     {
         var newSoundGroupGO = new GameObject(audioClip.name);
         var newAudioSource = newSoundGroupGO.AddComponent<AudioSource>();
+        newAudioSource.clip = audioClip;
+        newSoundGroupGO.SetActive(false);
         var newSoundGroup = newSoundGroupGO.AddComponent<SoundGroup>();
         newSoundGroup.RandomPitch = false;
         newSoundGroup.Sounds = new AudioClip[] { audioClip };
         newAudioSource.clip = audioClip;
+        newSoundGroupGO.SetActive(true);
+        //Debug.Log("Create new sound group from audio clip");
+        SoundManager.Instance.pooledObjects.Add(newSoundGroup, new List<SoundGroup>() { newSoundGroup });
+        SoundManager.Instance.spawnedObjects[newSoundGroup] = newSoundGroup;
         SoundManager.Instance.SoundGroupsDictionary[audioClip.name] = newSoundGroup;
         RecycleSoundToPool(newSoundGroup);
     }

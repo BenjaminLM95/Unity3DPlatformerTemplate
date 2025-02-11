@@ -106,8 +106,8 @@ MonoBehaviour:
   - {x: 0, y: 13, z: 0}
   chainJumpWindow: 0.1
   jumpBufferTime: 0.17
-  jumpAudio: {fileID: 0}
-  landAudio: {fileID: 0}
+  jumpAudio: {fileID: 8300000, guid: 1eb6e41ce6b723b4fa8ca165ba7625ec, type: 3}
+  landAudio: {fileID: 8300000, guid: 13c01d41158b11345aff445b056a40db, type: 3}
   onJumpPerformed:
     m_PersistentCalls:
       m_Calls: []
@@ -162,9 +162,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionZone: {fileID: 100018}
   interactionRadius: 0.5
-  interactableButtonTexture: {fileID: 2800000, guid: e2f1960f9f69cd44598490a6220153a6,
+  interactableButtonTexture: {fileID: 2800000, guid: 4ca052ec93013a04e91e88cf70b13ba2,
     type: 3}
-  throwForce: {x: 0, y: 5, z: 7}
+  throwForce: {x: 0, y: 5, z: 4}
   interactSound: {fileID: 0}
   releaseSound: {fileID: 0}
   armsAnimationLayer: 1
@@ -749,6 +749,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 45.000004
       objectReference: {fileID: 0}
+    - target: {fileID: -1924330416772942832, guid: 52241262e53495d45952e762d0a06c42,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -1793059242609255079, guid: ffebd650b7e550d488c5f91de6380b0c,
+        type: 3}
     - target: {fileID: 445712794880070669, guid: 52241262e53495d45952e762d0a06c42,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -809,6 +815,12 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6435320000920075851, guid: 52241262e53495d45952e762d0a06c42,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 988656143610355917, guid: 4dd1024848700fb4c98349fea8adf349,
+        type: 3}
     - target: {fileID: 7604367576434143486, guid: 52241262e53495d45952e762d0a06c42,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

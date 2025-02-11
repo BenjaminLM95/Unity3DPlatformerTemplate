@@ -282,7 +282,7 @@
                 {
                     "name": "",
                     "id": "f4b17813-92ee-442f-93ec-33d9c7cbbc42",
-                    "path": "<Keyboard>/e",
+                    "path": "<Keyboard>/t",
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardMouse",
@@ -346,7 +346,7 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "negative",
+                    "name": "Negative",
                     "id": "21778d03-198f-40b3-897f-255e160dafee",
                     "path": "<Gamepad>/leftShoulder",
                     "interactions": "",
@@ -357,7 +357,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "positive",
+                    "name": "Positive",
                     "id": "9c4cd846-86d3-45a3-a85a-b05b846527cb",
                     "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
