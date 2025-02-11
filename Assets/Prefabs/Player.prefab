@@ -106,6 +106,7 @@ MonoBehaviour:
   - {x: 0, y: 13, z: 0}
   chainJumpWindow: 0.1
   jumpBufferTime: 0.17
+  groundedTimeBeforeJump: 0.12
   jumpAudio: {fileID: 8300000, guid: 1eb6e41ce6b723b4fa8ca165ba7625ec, type: 3}
   landAudio: {fileID: 8300000, guid: 13c01d41158b11345aff445b056a40db, type: 3}
   onJumpPerformed:
@@ -164,9 +165,9 @@ MonoBehaviour:
   interactionRadius: 0.5
   interactableButtonTexture: {fileID: 2800000, guid: 4ca052ec93013a04e91e88cf70b13ba2,
     type: 3}
-  throwForce: {x: 0, y: 5, z: 4}
-  interactSound: {fileID: 0}
-  releaseSound: {fileID: 0}
+  throwForce: {x: 0, y: 4, z: 3}
+  interactSound: {fileID: 8300000, guid: e54450577a0239746ba490c4660c3068, type: 3}
+  releaseSound: {fileID: 8300000, guid: a9a95ef58475520409d81f15e55d4689, type: 3}
   armsAnimationLayer: 1
 --- !u!136 &2400076769302071918
 CapsuleCollider:
@@ -250,7 +251,7 @@ MonoBehaviour:
   dashDuration: 0.3
   dashCooldown: 1
   airDashUpwardsForce: 0.5
-  dashAudio: {fileID: 0}
+  dashAudio: {fileID: 8300000, guid: de4c33cbb953ee4449cb1838800906f3, type: 3}
   dashParticles: {fileID: 0}
   dashInvulnerability: 1
   dashCurve:
