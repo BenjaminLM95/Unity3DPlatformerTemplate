@@ -165,7 +165,7 @@ MonoBehaviour:
   interactionRadius: 0.5
   interactableButtonTexture: {fileID: 2800000, guid: 4ca052ec93013a04e91e88cf70b13ba2,
     type: 3}
-  throwForce: {x: 0, y: 4, z: 3}
+  throwForce: {x: 0, y: 6, z: 7}
   interactSound: {fileID: 8300000, guid: e54450577a0239746ba490c4660c3068, type: 3}
   releaseSound: {fileID: 8300000, guid: a9a95ef58475520409d81f15e55d4689, type: 3}
   armsAnimationLayer: 1
