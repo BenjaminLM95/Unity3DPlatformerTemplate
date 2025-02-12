@@ -7256,6 +7256,11 @@ PrefabInstance:
       propertyPath: toggleKinematicOnInteract
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6471282843798479557, guid: b9de8d968ab5cba4bad582c1f4e1d371,
+        type: 3}
+      propertyPath: InteractHoldingStopsHolding
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
