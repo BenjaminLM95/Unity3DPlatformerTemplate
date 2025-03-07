@@ -32,13 +32,14 @@ public class InteractionController : MonoBehaviour
     private AudioSource audioSource;
     private float defaultRotationSpeed;
     
-    private Interactable currentInteractable;
+    public Interactable currentInteractable;
     private FixedJoint physicsJoint;
     private float lastInteractionTime;
     
     private List<Interactable> interactablesInRange = new List<Interactable>();
     public Collider PlayerCollider { get => playerCollider; }
     public Vector3 ThrowForce => throwForce;
+    
 
 
     public bool IsCurrentInteractingWithThis(Interactable otherInteractable)
@@ -58,7 +59,9 @@ public class InteractionController : MonoBehaviour
     {
         RemoveInvalidEntriesFromInteractablesList();
 
-        DrawButtonHintForInteractables();
+        DrawButtonHintForInteractables();      
+      
+
     }
 
     private void DrawButtonHintForInteractables()
@@ -142,7 +145,7 @@ public class InteractionController : MonoBehaviour
         }
     }
 
-    private void BeginInteraction(Interactable interactable)
+    public void BeginInteraction(Interactable interactable)
     {
         if (!CanInteract(interactable)) return;
         
@@ -209,8 +212,12 @@ public class InteractionController : MonoBehaviour
         if (interactable is PickupInteractable)
         {
             Vector3 holdPosition = transform.position.SetY(transform.position.y + interactable.GetInteractableHeight() + playerCollider.bounds.extents.y);
+            Debug.Log("PickUp!");
             return !Physics.CheckSphere(holdPosition, interactionRadius, GameManager.Instance.groundMask);
+           
         }
         return true;
-    }
+    }   
+
+
 } 

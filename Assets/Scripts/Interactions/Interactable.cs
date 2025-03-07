@@ -7,7 +7,7 @@ using UnityEngine;
 public abstract class Interactable : MonoBehaviour
 {
     protected Collider col;
-    protected InteractionController currentInteractor;
+    public InteractionController currentInteractor;
 
     protected virtual void Awake()
     {

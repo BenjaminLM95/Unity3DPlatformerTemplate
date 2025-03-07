@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     private AdvancedMoveController moveController;
     private Rigidbody rb;
     private DashController dashController;
+    private CraftingBox craftingBox; 
+    
     
     // Movement state
     private Vector3 moveDirection;
@@ -58,6 +60,8 @@ public class PlayerController : MonoBehaviour
 
         TryGetComponent(out playerInput);
         TryGetComponent(out dashController);
+        craftingBox = GetComponent<CraftingBox>(); 
+        
 
         // Cache component references
         moveController = GetComponent<AdvancedMoveController>();
@@ -181,6 +185,12 @@ public class PlayerController : MonoBehaviour
         characterAnimator.SetFloat(MovementController.AnimationID_DistanceToTarget, moveController.distanceToDestination);
         characterAnimator.SetBool(MovementController.AnimationID_IsGrounded, moveController.isGrounded);
         characterAnimator.SetFloat(MovementController.AnimationID_YVelocity, rb.velocity.y);
+    }
+
+    private void OnCraftBox() 
+    {        
+        craftingBox.craftABox(); 
+
     }
 
 } 
