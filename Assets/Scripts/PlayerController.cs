@@ -188,7 +188,8 @@ public class PlayerController : MonoBehaviour
     }
 
     private void OnCraftBox() 
-    {        
+    {
+        // Here, by pression 'O', the player will be able to craft a box
         craftingBox.craftABox(); 
 
     }

@@ -32,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.21517892, z: 0, w: 0.97657466}
   m_LocalPosition: {x: 73.847404, y: -35.219227, z: 17.389977}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -151,9 +151,11 @@ MonoBehaviour:
   damageAudioClip: {fileID: 0}
   deathAudioClip: {fileID: 0}
   health: 1
-  takesCollisionDamage: 0
+  takesCollisionDamageFromRigidbodies: 0
+  takesCollisionDamageFromStaticbodies: 0
   minCollisionDamageVelocity: 0.2
   shouldRespawn: 0
+  respawnAfterSeconds: 1.5
   ignoredCollisionTags: []
   damageFlashInterval: 0.1
   invulnerabilityDuration: 0.9
@@ -179,5 +181,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc522de6c86c5694fb561a4cb55d8151, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentInteractor: {fileID: 0}
   weightMultiplierWhenHeld: 0.3
   holdHeight: 0.5
+  InteractHoldingTossesObject: 1
+  onTriggerActions:
+    rid: 1000
+  references:
+    version: 2
+    RefIds:
+    - rid: 1000
+      type: {class: TriggerActionsList, ns: , asm: Assembly-CSharp}
+      data:
+        list: []

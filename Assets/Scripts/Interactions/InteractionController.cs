@@ -212,7 +212,6 @@ public class InteractionController : MonoBehaviour
         if (interactable is PickupInteractable)
         {
             Vector3 holdPosition = transform.position.SetY(transform.position.y + interactable.GetInteractableHeight() + playerCollider.bounds.extents.y);
-            Debug.Log("PickUp!");
             return !Physics.CheckSphere(holdPosition, interactionRadius, GameManager.Instance.groundMask);
            
         }

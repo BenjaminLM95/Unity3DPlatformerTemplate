@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainScene.unity
     guid: b9df20fcec8049446933e6b258f76f79
   - enabled: 1
-    path: Assets/Scenes/Tutorial Level.unity
+    path: Assets/Scenes/NewMechanicPlayGround.unity
     guid: 6c8f8bb0b4d57224a8592fdd03f33755
   - enabled: 1
     path: Assets/Scenes/TransitionScene.unity
